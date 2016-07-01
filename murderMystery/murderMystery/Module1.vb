@@ -44,23 +44,9 @@ Module mainStory
             Console.Clear()
             suspects()
         Else
-
-            Console.ForegroundColor = ConsoleColor.DarkRed
-
-            Console.WriteLine("Ahh, you don't have it in you.")
-            Console.WriteLine("Please enter what you would like to do:")
-            Console.WriteLine("1. Restart the 'Murder Mystery'")
-            Console.WriteLine("2. Quit the 'Murder Mystery'")
-            selection = Console.ReadLine
-
-            If selection = 1 Then
-                Console.Clear()
-                openingStage()
-            Else
-                Console.WriteLine("Quitting...")
-                Threading.Thread.Sleep(1000)
-                End
-            End If
+            Console.Clear()
+            Threading.Thread.Sleep(500)
+            restartQuitA()
         End If
 
 
@@ -110,14 +96,14 @@ Module mainStory
         Else
             Console.Clear()
             Threading.Thread.Sleep(1000)
-            suspectQuestiongStart()
+            suspectQuestingStart()
 
 
         End If
 
     End Sub
 
-    Sub suspectQuestiongStart()
+    Sub suspectQuestingStart()
 
         Dim suspectsIn As Integer
 
@@ -137,16 +123,12 @@ Module mainStory
 
         Else
             Console.WriteLine("These numbers you have put in are either wrong or make no sense.")
+            restartQuitB()
+
         End If
 
 
 
-
-    End Sub
-
-    Sub endRestart1()
-        restartQuitA()
-        Console.WriteLine()
 
     End Sub
 End Module
@@ -154,12 +136,50 @@ End Module
 Module quitRestart
 
     Sub restartQuitA()
+        Dim selection As Integer
 
+        Console.ForegroundColor = ConsoleColor.DarkRed
+
+        Console.WriteLine("Ahh, you don't have it in you.")
+        Console.WriteLine("Please enter what you would like to do:")
+        Console.WriteLine("1. Restart the 'Murder Mystery'")
+        Console.WriteLine("2. Quit the 'Murder Mystery'")
+        selection = Console.ReadLine
+
+        If selection = 1 Then
+            Console.Clear()
+            openingStage()
+        Else
+            Console.WriteLine("Quitting...")
+            Threading.Thread.Sleep(1000)
+            End
+        End If
 
     End Sub
 
     Sub restartQuitB()
+        Dim selection As Integer
 
+        Console.ForegroundColor = ConsoleColor.DarkRed
+
+        Console.WriteLine("You have took in the wrong set of Suspects")
+        Console.WriteLine("Please enter what you would like to do:")
+        Console.WriteLine("1. Restart that section of 'Murder Mystery'")
+        Console.WriteLine("2. Restart the 'Murder Mystery' completely")
+        Console.WriteLine("3. Quit the 'Murder Mystery'")
+        selection = Console.ReadLine
+
+        If selection = 1 Then
+            Console.Clear()
+            suspectQuestingStart()
+        ElseIf selection = 2 Then
+            Console.Clear()
+            openingStage()
+        Else
+            Console.WriteLine("Quitting...")
+            Threading.Thread.Sleep(1000)
+            End
+        End If
     End Sub
 End Module
 
