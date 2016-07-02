@@ -1,6 +1,6 @@
 ﻿Module Module1
     Sub Main()
-        Console.WriteLine(ScriptEngine)
+        Console.WriteLine(ScriptEngineMajorVersion & ScriptEngineBuildVersion)
         Threading.Thread.Sleep(500)
         Console.Clear()
         openingStage()
