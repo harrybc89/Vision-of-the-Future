@@ -13,8 +13,6 @@ Module mainStory
 
     Sub openingStage()
 
-        Dim selection As Integer
-
         Console.ForegroundColor = ConsoleColor.DarkMagenta
 
         Console.WriteLine("-=====================================================-")
@@ -23,13 +21,29 @@ Module mainStory
         Threading.Thread.Sleep(2000)
 
         Console.Clear()
+        nameCorrect()
 
+    End Sub
+    Sub nameCorrect()
+        Dim selection As Integer
         Console.ForegroundColor = ConsoleColor.DarkBlue
 
         Console.WriteLine("Hello there, what is your name?")
         name = Console.ReadLine
+        Console.WriteLine("Do you wish to continue with this name?")
+        Console.WriteLine("1. Yes")
+        Console.WriteLine("2. No")
+        selection = Console.ReadLine
+        If selection = 1 Then
+            Console.WriteLine("Ahh. Hello " & name & ", we have a case for you. It is a murder case, with the death of Barack Obama.")
+            startGamer()
+        Else
+            nameCorrect()
+        End If
+    End Sub
 
-        Console.WriteLine("Ahh. Hello " & name & ", we have a case for you. It is a murder case, with the death of Barack Obama.")
+    Sub startGamer()
+        Dim selection As Integer
         Console.WriteLine("Will you help us, " & name & "?")
         Console.WriteLine("1. Yes")
         Console.WriteLine("2. No")
@@ -48,8 +62,6 @@ Module mainStory
             Threading.Thread.Sleep(500)
             restartQuitA()
         End If
-
-
     End Sub
 
     Sub suspects()
@@ -69,26 +81,36 @@ Module mainStory
         suspectPick = Console.ReadLine
 
         If suspectPick = 1 Then
+            Console.Clear()
+            Console.ForegroundColor = ConsoleColor.DarkRed
             Console.WriteLine("I was at Number 10 Downing Street, adressing the whole of the UK, on TV! How could I kill someone with a M1911, when the whole of England, Wales and Scotland can confirm I was on TV 10 minutes after the killing!")
             Threading.Thread.Sleep(4000)
             Console.Clear()
             suspects()
         ElseIf suspectPick = 2 Then
+            Console.Clear()
+            Console.ForegroundColor = ConsoleColor.DarkRed
             Console.WriteLine("I was busy recording a song for 'Panic! At The Disco', my producer can confirm this.")
             Threading.Thread.Sleep(4000)
             Console.Clear()
             suspects()
         ElseIf suspectPick = 3 Then
+            Console.Clear()
+            Console.ForegroundColor = ConsoleColor.DarkRed
             Console.WriteLine("I was in America, I must have been, how could I be in England when I have to be in America, campagning")
             Threading.Thread.Sleep(4000)
             Console.Clear()
             suspects()
         ElseIf suspectPick = 4 Then
+            Console.Clear()
+            Console.ForegroundColor = ConsoleColor.DarkRed
             Console.WriteLine("I was on the radio in Japan, all my fans can prove it!")
             Threading.Thread.Sleep(4000)
             Console.Clear()
             suspects()
         ElseIf suspectPick = 5 Then
+            Console.Clear()
+            Console.ForegroundColor = ConsoleColor.DarkRed
             Console.WriteLine("I was playing ALO (ALfhiem Online). The game records can confirm this.")
             Threading.Thread.Sleep(4000)
             Console.Clear()
@@ -106,6 +128,8 @@ Module mainStory
     Sub suspectQuestingStart()
 
         Dim suspectsIn As Integer
+        Console.Clear()
+        Console.ForegroundColor = ConsoleColor.Blue
 
         Console.WriteLine("Please input the numbers of the Suspects you'd wish to bring in for questioning.")
         Console.WriteLine("Type '0' to return to the suspect list and evidence list.")
