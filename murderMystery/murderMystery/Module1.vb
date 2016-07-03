@@ -1,6 +1,6 @@
 ﻿Module Module1
     Sub Main()
-        Console.WriteLine(ScriptEngineMajorVersion & ScriptEngineBuildVersion)
+        Console.WriteLine(ScriptEngineMajorVersion & " " & ScriptEngineBuildVersion)
         Threading.Thread.Sleep(500)
         Console.Clear()
         openingStage()
@@ -117,7 +117,7 @@ Module mainStory
             Console.Clear()
             Threading.Thread.Sleep(500)
             suspects()
-        ElseIf suspectsIn = 13 Then
+        ElseIf suspectsIn = 13 Or 31 Then
             Console.Clear()
             Threading.Thread.Sleep(1000)
 
